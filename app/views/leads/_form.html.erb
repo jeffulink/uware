@@ -1,0 +1,24 @@
+<%= simple_form_for @lead do |f| %>
+
+    <div class="field">
+    <%= f.label :客戶名稱 %>
+    <%= f.text_field :customer %>
+    <br>
+    <%= f.label :負責業務 %>
+    <%= f.input :sales, collection: ['vivian','tobey'],prompt: "負責業務" %>
+    <br>
+    <%= f.label :區域 %>
+    <%= f.input :area, collection: ['台北市','桃園市','新竹市','台中市','台南市','高雄市'],prompt: "選地區", selected: "台北市" %>
+    <br>
+    <%= f.label :案例 %>
+    <%= f.text_field :opp %>
+    <br>
+    <%= f.label :成交 %>
+    <%= f.text_field :order %>
+    </div>
+
+     <div class="actions">
+      <%= f.submit %>
+     </div>
+
+<% end %>

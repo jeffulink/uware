@@ -38,6 +38,7 @@ gem 'bcrypt', '~> 3.1.7'
 gem "paperclip"
 #gem 'carrierwave'
 gem 'rmagick'
+gem 'simple_form'
 # gem 'rwd-kickstart', '~> 1.0'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development

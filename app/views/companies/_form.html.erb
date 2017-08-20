@@ -1,0 +1,18 @@
+<%= form_for(company) do |f| %>
+
+    <div class="field">
+    <%= f.label :name %>
+    <%= f.text_field :name %>
+  </div>
+
+  <%= f.label :Sales %>
+  <%= f.collection_select(:employee_id, Employee.all, :id, :employee) %>
+ 
+  <%= f.label :Area %>
+  <%= f.collection_select(:area_id, Area.all, :id, :ename) %>
+  
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+
+<% end %>

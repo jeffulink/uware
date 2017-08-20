@@ -1,0 +1,33 @@
+<%
+=begin %>
+
+<% if @lead.logo.exists? %>
+
+  <%= image_tag( @lead.logo.url(:medium) ) %>
+  <%= image_tag( @lead.logo.url(:medium) ) %>
+<% else %>
+  None
+<% end %>
+
+<% @comments.each do |comment| %>
+  <div class="row well">
+    <p>
+      <%= comment.content %>
+    </p>
+    <p>
+      留言者：<%= comment.user.name %>
+    </p>
+    </div>
+<%end%>
+<%
+=end %>
+
+<%= form_for([@lead, @comment]) do |f| %>
+   <div class="field">
+    <%= f.label :content %>
+    <%= f.text_area :content %>
+  </div>
+
+    <div class="actions">
+    <%= f.submit %>
+  </div>

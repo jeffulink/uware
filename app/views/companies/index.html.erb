@@ -1,0 +1,39 @@
+<h1>客戶資訊</h1>
+
+
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Employee_id</th>
+            <th>employee</th>
+            <th>cname</th>
+        </tr>
+    </thead>
+    <!-- 是一般 html 註解法 -->
+    <tbody>
+      <% @companies.each do |company| %>
+        <tr>
+            <td><%= company.name %></td>
+            <td><%= company.employee_id ? company.employee_id : "" %></td>
+            <td><%= company.employee ? company.employee : "" %></td>
+            <td><%= company.cname ? company.cname : "" %></td>
+           
+           
+            <td><%= link_to 'Show', company, class: 'btn btn-info' %></td>
+        
+        <td><%= link_to 'Edit', edit_company_path(company), class:'btn btn-primary' %></td>
+        <td><%= link_to 'Destroy', company, method: :delete, data: { confirm: 'Are you sure?' }, class:'btn btn-danger' %></td>
+        
+
+        <tr>
+      <% end %>
+    </tbody>
+</table>
+
+<br>
+
+  <%= paginate @companies %>
+
+<br>
