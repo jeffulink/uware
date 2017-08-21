@@ -2,7 +2,7 @@ class LeadsController < ApplicationController
 
     before_action :set_lead, only: [:edit, :update, :show, :destroy]
     def index
-        @leads = Lead.all.page(params[:page]).per(9)
+        @leads = Lead.all.page(params[:page]).per(5)
     end
 
     def show
