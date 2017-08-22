@@ -1,7 +1,9 @@
-<h1>NEW USERS</h1>
+ <% if logged_in? %>
+<h2>新增使用者</h2>
 
 
 <% if logged_in? %>
 <%= render 'form', user: @user %>
 <%= link_to 'Back', users_path , class: 'btn btn-success'%>
+<% end %>
 <% end %>
